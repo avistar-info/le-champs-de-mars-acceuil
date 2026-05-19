@@ -710,6 +710,9 @@ window.addEventListener('load', function(){
   render();
   renderChips();
 
+  // Scan QR — tracké à chaque ouverture de page
+  track('scan_qr', {});
+
   setTimeout(function(){
     var loader = document.getElementById('loader');
     loader.style.opacity = '0';
