@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <title>Le Champ de Mars — Votre avis</title>
   <link rel="preload" as="image" href="./restaurant.jpg" fetchpriority="high">
@@ -60,7 +60,7 @@
     /* ── OVERLAY + SHEET ── */
     .form-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.52);opacity:0;pointer-events:none;transition:opacity .3s}
     .form-overlay.active{opacity:1;pointer-events:all}
-    .form-sheet{position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:24px 24px 0 0;max-height:90vh;max-height:90dvh;overflow-y:auto;transform:translateY(100%);transition:transform .4s cubic-bezier(.32,.72,0,1)}
+    .form-sheet{position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:24px 24px 0 0;max-height:90vh;max-height:90dvh;overflow-y:auto;transform:translateY(100%);transition:transform .4s cubic-bezier(.32,.72,0,1);overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
     .form-overlay.active .form-sheet{transform:translateY(0)}
     .form-handle{width:38px;height:4px;background:#e5e5e5;border-radius:2px;margin:14px auto 0}
 
@@ -87,7 +87,7 @@
     .cat-row:last-child{border-bottom:none}
     .cat-name{font-size:15px;color:#3c4043}
     .cat-stars{display:flex;gap:3px}
-    .cstar{font-size:26px;color:#e0e0e0;cursor:pointer;background:none;border:none;padding:1px;line-height:1;transition:color .1s;user-select:none;-webkit-user-select:none}
+    .cstar{font-size:26px;color:#e0e0e0;cursor:pointer;background:none;border:none;padding:9px 6px;line-height:1;transition:color .1s;user-select:none;-webkit-user-select:none}
 
     /* ── TEXTAREA ── */
     .review-textarea{width:100%;padding:14px;border:1.5px solid #dadce0;border-radius:8px;font-size:15px;color:#202124;resize:none;outline:none;font-family:inherit;min-height:110px;background:#fff;transition:border-color .2s;-webkit-appearance:none}
@@ -127,8 +127,11 @@
     .success-state.visible{display:block}
     .success-icon{font-size:60px;margin-bottom:16px}
     .success-title{font-size:21px;font-weight:800;color:#1a1a1a;margin-bottom:8px}
-    .success-text{font-size:14px;color:#777;line-height:1.5}
+    .success-text{font-size:14px;color:#777;line-height:1.5;margin-bottom:24px}
+    .success-cta{display:inline-block;margin-top:4px;padding:13px 28px;background:#1a1a1a;color:#fff;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.3px}
     .form-body.hidden{display:none}
+    .btn-submit.loading{background:#5ba0f0;pointer-events:none}
+    .btn-submit.loading::after{content:' ···';letter-spacing:2px}
 
     /* ── I18N ── */
     [data-lang]{display:none}
@@ -184,7 +187,7 @@
       <button class="lstar" id="ls5" onclick="landingStar(5)">&#9733;</button>
     </div>
     <div class="landing-hint" id="landingHint">&nbsp;</div>
-    <div class="thanks-msg" id="thanksMsg" id="t-thanks"></div>
+    <div class="thanks-msg" id="thanksMsg"></div>
   </div>
 </div>
 
@@ -197,6 +200,7 @@
       <div class="success-icon">&#128591;</div>
       <div class="success-title" id="t-success-title"></div>
       <div class="success-text" id="t-success-text"></div>
+      <a href="https://www.instagram.com/lechampdemarsparis/" target="_blank" class="success-cta" id="t-success-cta"></a>
     </div>
 
     <div class="form-body" id="form-body">
@@ -399,7 +403,8 @@ var T = {
     rgpd:'J\'accepte que mes données soient transmises à l\'établissement Le Champ de Mars afin de traiter mon retour, conformément au RGPD (Règlement UE 2016/679). Ces données ne seront ni conservées au-delà du strict nécessaire, ni cédées à des tiers.',
     submit:'Publier mon avis',
     successTitle:'Merci pour votre retour&nbsp;!',
-    successText:'Votre avis nous aide &#224; nous am&#233;liorer pour votre prochaine visite.'
+    successText:'Votre avis nous aide &#224; nous am&#233;liorer pour votre prochaine visite.',
+    successCta:'Suivez-nous sur Instagram &#128247;'
   },
   en:{
     g:{morning:'Thank you for breakfast &#9728;&#65039;',lunch:'Thank you for lunch &#127869;&#65039;',afternoon:'Thanks for stopping by &#9749;',dinner:'Thank you for dinner &#127769;',night:'Thank you for your evening &#10024;'},
@@ -429,7 +434,8 @@ var T = {
     rgpd:'I agree that my data will be transmitted to Le Champ de Mars to process my feedback, in accordance with GDPR (EU Regulation 2016/679). Data will not be retained beyond what is strictly necessary, nor shared with third parties.',
     submit:'Publish my review',
     successTitle:'Thank you for your feedback!',
-    successText:'Your review truly helps us improve for your next visit.'
+    successText:'Your review truly helps us improve for your next visit.',
+    successCta:'Follow us on Instagram &#128247;'
   },
   zh:{
     g:{morning:'&#24863;&#35874;&#24744;&#30340;&#26089;&#39�;&#20809;&#20020; &#9728;&#65039;',lunch:'&#24863;&#35874;&#24744;&#30340;&#21320;&#39�;&#20809;&#20020; &#127869;&#65039;',afternoon:'&#24863;&#35874;&#24744;&#30340;&#20551;&#20020; &#9749;',dinner:'&#24863;&#35874;&#24744;&#30340;&#26202;&#39057;&#20809;&#20020; &#127769;',night:'&#24863;&#35874;&#24744;&#20170;&#26202;&#30340;&#20809;&#20020; &#10024;'},
@@ -459,7 +465,8 @@ var T = {
     rgpd:'我同意将我的数据传输给Le Champ de Mars以处理我的反馈，符合GDPR（欧盟法规2016/679）。数据不会超出严格必要范围保存，也不会与第三方共享。',
     submit:'&#21457;&#24067;&#25105;&#30340;&#35780;&#20215;',
     successTitle:'&#24863;&#35874;&#24744;&#30340;&#21453;&#39304;&#65281;',
-    successText:'&#24744;&#30340;&#35780;&#20215;&#24110;&#21161;&#25105;&#20204;&#19981;&#26029;&#36827;&#27493;&#12290;'
+    successText:'&#24744;&#30340;&#35780;&#20215;&#24110;&#21161;&#25105;&#20204;&#19981;&#26029;&#36827;&#27493;&#12290;',
+    successCta:'&#20851;&#27880;&#25105;&#20204;&#30340;Instagram &#128247;'
   }
 };
 
@@ -518,6 +525,7 @@ function render(){
   set('t-submit', t.submit);
   set('t-success-title', t.successTitle);
   set('t-success-text', t.successText);
+  set('t-success-cta', t.successCta);
   updateLandingHint(landingNote);
   updateFormHint(formNote);
 }
@@ -576,7 +584,7 @@ function landingStar(v){
     var tm = document.getElementById('thanksMsg');
     tm.innerHTML = T[lang].thanks;
     tm.classList.add('show');
-    setTimeout(function(){ window.location.href = GOOGLE_LINK; }, 1600);
+    setTimeout(function(){ window.location.href = GOOGLE_LINK; }, 2200);
   } else {
     setTimeout(function(){ openForm(); setFStar(v); }, 300);
   }
@@ -693,11 +701,17 @@ function submitForm(){
     lang:lang,
     ts:new Date().toISOString()
   };
-  fetch(WEBHOOK_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
-  track('form_submitted',{note:formNote, contact_type:contactMode, contact:contact});
-  document.getElementById('form-body').classList.add('hidden');
-  document.getElementById('success').classList.add('visible');
-  setTimeout(closeForm, 3000);
+  var btn = document.getElementById('btn-submit');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  fetch(WEBHOOK_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .catch(function(){})
+    .finally(function(){
+      track('form_submitted',{note:formNote, contact_type:contactMode, contact:contact});
+      document.getElementById('form-body').classList.add('hidden');
+      document.getElementById('success').classList.add('visible');
+      setTimeout(closeForm, 4000);
+    });
 }
 
 /* ── INIT ── */
@@ -719,7 +733,7 @@ window.addEventListener('load', function(){
     setTimeout(function(){ loader.style.display='none'; }, 500);
     document.getElementById('ri').classList.add('visible');
     setTimeout(function(){ document.getElementById('card').classList.add('visible'); }, 220);
-  }, 1800);
+  }, 1200);
 });
 </script>
 </body>
