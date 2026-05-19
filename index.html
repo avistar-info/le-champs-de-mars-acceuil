@@ -290,6 +290,12 @@
         </div>
       </div>
 
+      <!-- SERVEUR -->
+      <div class="section" style="padding-top:18px;padding-bottom:18px">
+        <div class="section-label" id="t-serveur-label"></div>
+        <input type="text" class="finput" id="serveurNom" id="t-serveur-placeholder" autocomplete="off">
+      </div>
+
       <!-- CHIPS BRUIT -->
       <div class="section" style="padding-top:14px">
         <div class="section-label" id="t-bruit-label"></div>
@@ -326,7 +332,7 @@
 
       <!-- CONTACT -->
       <div class="section" style="padding-top:0;padding-bottom:4px">
-        <div class="section-label"><span id="t-contact-label"></span><span class="req"> *</span></div>
+        <div class="section-label"><span id="t-contact-label"></span></div>
         <div class="ctoggle">
           <button class="ctbtn active" id="btn-email" onclick="switchContact('email')">&#128231; Email</button>
           <button class="ctbtn" id="btn-phone" onclick="switchContact('phone')" id="t-phone-btn"></button>
@@ -343,7 +349,7 @@
       <div class="rgpd-wrap">
         <label class="rgpd-label">
           <input type="checkbox" id="rgpd" onchange="refreshSubmit()">
-          <span id="t-rgpd"></span><span class="req"> *</span>
+          <span><span id="t-rgpd"></span><span class="req"> *</span></span>
         </label>
       </div>
 
@@ -377,10 +383,12 @@ var T = {
     cats:{cuisine:'Cuisine',service:'Service',ambiance:'Ambiance',proprete:'Propret&#233;'},
     mealLabel:'Type de repas',
     budgetLabel:'Budget par personne',
+    serveurLabel:'Nom du serveur',
+    serveurPlaceholder:'Ex : Jean, Marie…',
     bruitLabel:'Niveau sonore',
     attenteLabel:'Temps d\'attente',
     textareaLabel:'Votre commentaire',
-    placeholder:'D&#233;crivez votre exp&#233;rience&#8230;',
+    placeholder:'Décrivez votre expérience…',
     dateLabel:'Date de visite',
     contactLabel:'Vos coordonn&#233;es',
     phoneBtn:'&#128241; T&#233;l&#233;phone',
@@ -402,10 +410,12 @@ var T = {
     cats:{cuisine:'Food',service:'Service',ambiance:'Atmosphere',proprete:'Cleanliness'},
     mealLabel:'Meal type',
     budgetLabel:'Budget per person',
+    serveurLabel:'Server name',
+    serveurPlaceholder:'E.g. John, Marie…',
     bruitLabel:'Noise level',
     attenteLabel:'Wait time',
     textareaLabel:'Your comment',
-    placeholder:'Describe your experience&#8230;',
+    placeholder:'Describe your experience…',
     dateLabel:'Visit date',
     contactLabel:'Your contact',
     phoneBtn:'&#128241; Phone',
@@ -427,10 +437,12 @@ var T = {
     cats:{cuisine:'&#32993;&#39301;',service:'&#26381;&#21153;',ambiance:'&#27668;&#22278;',proprete:'&#28165;&#27905;'},
     mealLabel:'&#39031;&#39154;&#31867;&#22411;',
     budgetLabel:'&#20154;&#22343;&#28040;&#36153;',
+    serveurLabel:'服务员姓名',
+    serveurPlaceholder:'例如：让、玛丽…',
     bruitLabel:'&#22768;&#39030;&#27700;&#24179;',
     attenteLabel:'&#31561;&#24453;&#26102;&#38388;',
     textareaLabel:'&#24744;&#30340;&#35780;&#35770;',
-    placeholder:'&#25551;&#36848;&#24744;&#30340;&#20307;&#39564;&#8230;',
+    placeholder:'描述您的体验…',
     dateLabel:'&#21040;&#35775;&#26085;&#26399;',
     contactLabel:'&#24744;&#30340;&#32852;&#31995;&#26041;&#24335;',
     phoneBtn:'&#128241; &#30005;&#35805;',
@@ -485,6 +497,8 @@ function render(){
   set('c-proprete-lbl', t.cats.proprete);
   set('t-meal-label', t.mealLabel);
   set('t-budget-label', t.budgetLabel);
+  set('t-serveur-label', t.serveurLabel);
+  document.getElementById('serveurNom').placeholder = t.serveurPlaceholder;
   set('t-bruit-label', t.bruitLabel);
   set('t-attente-label', t.attenteLabel);
   set('t-textarea-label', t.textareaLabel);
@@ -644,6 +658,7 @@ function submitForm(){
     date_visite:document.getElementById('dateVisite').value,
     type_repas:chipSel.repas,
     budget:chipSel.budget,
+    serveur:document.getElementById('serveurNom').value.trim(),
     bruit:chipSel.bruit,
     attente:chipSel.attente,
     contact_type:contactMode,
