@@ -29,8 +29,9 @@
     .restaurant-name{font-size:30px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:4px;text-shadow:0 2px 12px rgba(0,0,0,.5);letter-spacing:-.3px}
     .restaurant-meta{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:8px}
     .rating-row{display:flex;align-items:center;gap:6px}
-    .rating-stars{color:#FFB800;font-size:15px;letter-spacing:1px}
-    .rating-count{font-size:13px;color:rgba(255,255,255,.5)}
+    .rating-stars{position:relative;display:inline-block;font-size:15px;letter-spacing:1px}
+    .rating-stars-bg{color:rgba(255,255,255,.3)}
+    .rating-stars-fill{position:absolute;top:0;left:0;overflow:hidden;width:50%;color:#FFB800;white-space:nowrap}
 
     /* ── CARD ── */
     .card{background:rgba(255,255,255,.97);border-radius:22px;padding:24px 20px 22px;opacity:0;transform:translateY(30px);transition:opacity .7s ease .25s,transform .7s ease .25s}
@@ -160,8 +161,11 @@
     <div class="restaurant-name">Le Champ de Mars</div>
     <div class="restaurant-meta">Bistrot Parisien &middot; Paris 7e &mdash; Tous les jours 6h&ndash;2h</div>
     <div class="rating-row">
-      <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span class="rating-count" id="t-rating-count"></span>
+      <span class="rating-stars">
+        <span class="rating-stars-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-stars-fill">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </span>
+      <span style="font-size:13px;font-weight:700;color:#fff;margin-left:6px">2,5</span>
     </div>
   </div>
 
@@ -286,6 +290,27 @@
         </div>
       </div>
 
+      <!-- CHIPS BRUIT -->
+      <div class="section" style="padding-top:14px">
+        <div class="section-label" id="t-bruit-label"></div>
+        <div class="chips-wrap" id="chips-bruit">
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Calme" data-en="Quiet" data-zh="安静"></div>
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Normal" data-en="Normal" data-zh="正常"></div>
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Bruyant" data-en="Loud" data-zh="嘈杂"></div>
+        </div>
+      </div>
+
+      <!-- CHIPS ATTENTE -->
+      <div class="section" style="padding-top:14px">
+        <div class="section-label" id="t-attente-label"></div>
+        <div class="chips-wrap" id="chips-attente">
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Rapide" data-en="Fast" data-zh="快速"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Normal" data-en="Normal" data-zh="正常"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Long" data-en="Long" data-zh="较长"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Tr&#232;s long" data-en="Very long" data-zh="很长"></div>
+        </div>
+      </div>
+
       <!-- TEXTAREA -->
       <div class="textarea-wrap">
         <div class="textarea-lbl" id="t-textarea-label"></div>
@@ -352,6 +377,8 @@ var T = {
     cats:{cuisine:'Cuisine',service:'Service',ambiance:'Ambiance',proprete:'Propret&#233;'},
     mealLabel:'Type de repas',
     budgetLabel:'Budget par personne',
+    bruitLabel:'Niveau sonore',
+    attenteLabel:'Temps d\'attente',
     textareaLabel:'Votre commentaire',
     placeholder:'D&#233;crivez votre exp&#233;rience&#8230;',
     dateLabel:'Date de visite',
@@ -375,6 +402,8 @@ var T = {
     cats:{cuisine:'Food',service:'Service',ambiance:'Atmosphere',proprete:'Cleanliness'},
     mealLabel:'Meal type',
     budgetLabel:'Budget per person',
+    bruitLabel:'Noise level',
+    attenteLabel:'Wait time',
     textareaLabel:'Your comment',
     placeholder:'Describe your experience&#8230;',
     dateLabel:'Visit date',
@@ -398,6 +427,8 @@ var T = {
     cats:{cuisine:'&#32993;&#39301;',service:'&#26381;&#21153;',ambiance:'&#27668;&#22278;',proprete:'&#28165;&#27905;'},
     mealLabel:'&#39031;&#39154;&#31867;&#22411;',
     budgetLabel:'&#20154;&#22343;&#28040;&#36153;',
+    bruitLabel:'&#22768;&#39030;&#27700;&#24179;',
+    attenteLabel:'&#31561;&#24453;&#26102;&#38388;',
     textareaLabel:'&#24744;&#30340;&#35780;&#35770;',
     placeholder:'&#25551;&#36848;&#24744;&#30340;&#20307;&#39564;&#8230;',
     dateLabel:'&#21040;&#35775;&#26085;&#26399;',
@@ -415,7 +446,7 @@ var lang = 'fr';
 var landingNote = 0;
 var formNote = 0;
 var catNotes = {cuisine:0,service:0,ambiance:0,proprete:0};
-var chipSel = {repas:null,budget:null};
+var chipSel = {repas:null,budget:null,bruit:null,attente:null};
 var contactMode = 'email';
 
 /* ── LANG DETECT ── */
@@ -445,7 +476,6 @@ function render(){
   set('t-greeting', greet);
   set('t-question', t.question);
   set('t-subtext', t.subtext);
-  set('t-rating-count', t.ratingCount);
   set('t-form-title', t.formTitle);
   document.getElementById('t-stars-label').innerHTML = '<span class="req">* </span>' + t.starsLabel;
   set('t-cat-label', t.catLabel);
@@ -455,6 +485,8 @@ function render(){
   set('c-proprete-lbl', t.cats.proprete);
   set('t-meal-label', t.mealLabel);
   set('t-budget-label', t.budgetLabel);
+  set('t-bruit-label', t.bruitLabel);
+  set('t-attente-label', t.attenteLabel);
   set('t-textarea-label', t.textareaLabel);
   document.getElementById('review-text').placeholder = t.placeholder;
   set('t-date-label', t.dateLabel);
@@ -474,10 +506,11 @@ function set(id, html){
 
 /* ── CHIP LABELS ── */
 function renderChips(){
-  var t = T[lang];
-  document.querySelectorAll('#chips-repas .chip').forEach(function(c){
-    var key = 'data-'+lang;
-    if(c.getAttribute(key)) c.textContent = c.getAttribute(key);
+  ['repas','bruit','attente'].forEach(function(group){
+    document.querySelectorAll('#chips-'+group+' .chip').forEach(function(c){
+      var val = c.getAttribute('data-'+lang);
+      if(val) c.textContent = val;
+    });
   });
 }
 
@@ -611,6 +644,8 @@ function submitForm(){
     date_visite:document.getElementById('dateVisite').value,
     type_repas:chipSel.repas,
     budget:chipSel.budget,
+    bruit:chipSel.bruit,
+    attente:chipSel.attente,
     contact_type:contactMode,
     contact:contact,
     lang:lang,
