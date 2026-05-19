@@ -65,59 +65,61 @@
     .form-handle{width:38px;height:4px;background:#e5e5e5;border-radius:2px;margin:14px auto 0}
 
     /* ── FORM HEADER ── */
-    .form-header{padding:16px 22px 18px;border-bottom:1px solid #f2f2f2;display:flex;align-items:center;gap:12px}
-    .form-header-icon{width:38px;height:38px;background:#4285f4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
-    .form-header-texts{}
-    .form-restaurant{font-size:12px;color:#aaa;margin-bottom:1px}
-    .form-title{font-size:18px;font-weight:800;color:#1a1a1a}
-    .form-close{margin-left:auto;background:none;border:none;font-size:24px;color:#bbb;cursor:pointer;line-height:1;padding:4px}
+    .form-header{padding:20px 22px 16px;border-bottom:1px solid #f0f0f0;text-align:center}
+    .form-restaurant{font-size:12px;color:#aaa;margin-bottom:2px}
+    .form-title{font-size:20px;font-weight:800;color:#1a1a1a}
+    .form-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;color:#bbb;cursor:pointer;line-height:1;padding:4px}
 
-    /* ── SECTIONS ── */
-    .section{padding:20px 22px 0}
-    .section-label{font-size:12px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
-    .section-label .req{color:#d93025;font-size:13px}
+    /* ── SECTION WRAPPER ── */
+    .fsec{padding:18px 22px;border-bottom:1px solid #f0f0f0}
+    .fsec:last-of-type{border-bottom:none}
+    .flabel{font-size:13px;font-weight:600;color:#3c4043;margin-bottom:12px}
+    .flabel .req{color:#d93025}
 
-    /* ── STARS IN FORM ── */
-    .fstars-row{display:flex;justify-content:center;gap:6px;margin-bottom:4px}
-    .fstar{font-size:40px;color:#e0e0e0;cursor:pointer;background:none;border:none;line-height:1;padding:2px;transition:color .1s;user-select:none;-webkit-user-select:none}
-    .fstar-hint{text-align:center;font-size:13px;color:#888;min-height:18px;margin-bottom:18px;font-style:italic}
+    /* ── GLOBAL STARS ── */
+    .fstars-row{display:flex;justify-content:center;gap:8px;margin-bottom:6px}
+    .fstar{font-size:44px;color:#e0e0e0;cursor:pointer;background:none;border:none;line-height:1;padding:2px;transition:color .1s;user-select:none;-webkit-user-select:none}
+    .fstar-hint{text-align:center;font-size:14px;color:#5f6368;min-height:20px;font-style:italic}
 
     /* ── CAT STARS ── */
-    .cat-grid{display:flex;flex-direction:column;gap:13px;padding-bottom:4px}
-    .cat-row{display:flex;align-items:center;justify-content:space-between}
-    .cat-name{font-size:14px;color:#1a1a1a;font-weight:500}
-    .cat-stars{display:flex;gap:4px}
-    .cstar{font-size:24px;color:#e0e0e0;cursor:pointer;background:none;border:none;padding:1px;line-height:1;transition:color .1s;user-select:none;-webkit-user-select:none}
-
-    /* ── CHIPS ── */
-    .chips-wrap{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:4px}
-    .chip{padding:8px 14px;border:1.5px solid #e0e0e0;border-radius:20px;font-size:13px;color:#555;cursor:pointer;background:#fff;transition:all .15s;user-select:none;font-family:inherit}
-    .chip.sel{border-color:#1a73e8;background:#e8f0fe;color:#1a73e8;font-weight:600}
+    .cat-grid{display:flex;flex-direction:column;gap:0}
+    .cat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f8f8f8}
+    .cat-row:last-child{border-bottom:none}
+    .cat-name{font-size:15px;color:#3c4043}
+    .cat-stars{display:flex;gap:3px}
+    .cstar{font-size:26px;color:#e0e0e0;cursor:pointer;background:none;border:none;padding:1px;line-height:1;transition:color .1s;user-select:none;-webkit-user-select:none}
 
     /* ── TEXTAREA ── */
-    .textarea-wrap{padding:20px 22px 0}
-    .textarea-lbl{font-size:12px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px}
-    .review-textarea{width:100%;padding:13px 14px;border:1.5px solid #e5e5e5;border-radius:13px;font-size:15px;color:#1a1a1a;resize:none;outline:none;font-family:inherit;min-height:96px;background:#fafafa;transition:border-color .2s,background .2s}
-    .review-textarea:focus{border-color:#1a73e8;background:#fff}
+    .review-textarea{width:100%;padding:14px;border:1.5px solid #dadce0;border-radius:8px;font-size:15px;color:#202124;resize:none;outline:none;font-family:inherit;min-height:110px;background:#fff;transition:border-color .2s;-webkit-appearance:none}
+    .review-textarea:focus{border-color:#1a73e8}
     .char-count{text-align:right;font-size:11px;color:#bbb;margin-top:4px}
 
-    /* ── DATE + CONTACT ── */
-    .finput{width:100%;border:1.5px solid #e5e5e5;border-radius:13px;padding:13px 14px;font-family:inherit;font-size:16px;color:#1a1a1a;outline:none;transition:border-color .2s;-webkit-appearance:none;background:#fafafa}
-    .finput:focus{border-color:#1a73e8;background:#fff}
+    /* ── DATE SELECTS ── */
+    .date-row{display:flex;gap:10px}
+    .fselect{flex:1;border:1.5px solid #dadce0;border-radius:8px;padding:12px 10px;font-family:inherit;font-size:15px;color:#202124;outline:none;-webkit-appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235f6368' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;cursor:pointer;transition:border-color .2s}
+    .fselect:focus{border-color:#1a73e8}
+
+    /* ── TEXT INPUT ── */
+    .finput{width:100%;border:1.5px solid #dadce0;border-radius:8px;padding:13px 14px;font-family:inherit;font-size:16px;color:#202124;outline:none;transition:border-color .2s;-webkit-appearance:none;background:#fff}
+    .finput:focus{border-color:#1a73e8}
+
+    /* ── CHIPS ── */
+    .chips-wrap{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:8px 16px;border:1.5px solid #dadce0;border-radius:20px;font-size:14px;color:#3c4043;cursor:pointer;background:#fff;transition:all .15s;user-select:none;font-family:inherit;white-space:nowrap}
+    .chip.sel{border-color:#1a73e8;background:#e8f0fe;color:#1a73e8;font-weight:600}
+
+    /* ── CONTACT ── */
     .ctoggle{display:flex;gap:8px;margin-bottom:12px}
-    .ctbtn{flex:1;padding:10px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:14px;font-weight:500;color:#777;cursor:pointer;background:#fff;transition:all .15s;font-family:inherit}
+    .ctbtn{flex:1;padding:10px;border:1.5px solid #dadce0;border-radius:8px;font-size:14px;font-weight:500;color:#5f6368;cursor:pointer;background:#fff;transition:all .15s;font-family:inherit}
     .ctbtn.active{border-color:#1a73e8;background:#e8f0fe;color:#1a73e8}
 
     /* ── RGPD ── */
-    .rgpd-wrap{padding:18px 22px 4px}
-    .rgpd-label{display:flex;align-items:flex-start;gap:10px;font-size:11px;color:#aaa;cursor:pointer;line-height:1.45;padding:12px;background:#f8f8f8;border-radius:10px}
-    .rgpd-label input[type=checkbox]{margin-top:1px;flex-shrink:0;width:16px;height:16px;accent-color:#1a73e8;cursor:pointer}
-    .req-note{color:#d93025;font-weight:700}
+    .rgpd-label{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#5f6368;cursor:pointer;line-height:1.5}
+    .rgpd-label input[type=checkbox]{margin-top:2px;flex-shrink:0;width:17px;height:17px;accent-color:#1a73e8;cursor:pointer}
 
     /* ── SUBMIT ── */
-    .submit-wrap{padding:16px 22px 36px}
-    .btn-submit{width:100%;padding:16px;background:#1a73e8;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:700;cursor:pointer;min-height:52px;transition:background .15s,transform .1s;font-family:inherit}
-    .btn-submit:active:not(:disabled){background:#1557b0;transform:scale(.99)}
+    .btn-submit{width:100%;padding:16px;background:#1a73e8;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;min-height:54px;transition:background .15s;font-family:inherit;letter-spacing:.3px}
+    .btn-submit:active:not(:disabled){background:#1557b0}
     .btn-submit:disabled{background:#e8e8e8;color:#bbb;cursor:not-allowed}
 
     /* ── SUCCESS ── */
@@ -199,18 +201,15 @@
 
     <div class="form-body" id="form-body">
 
-      <div class="form-header">
-        <div class="form-header-icon">&#9733;</div>
-        <div class="form-header-texts">
-          <div class="form-restaurant">Le Champ de Mars</div>
-          <div class="form-title" id="t-form-title"></div>
-        </div>
+      <!-- HEADER -->
+      <div class="form-header" style="position:relative">
+        <div class="form-restaurant">Le Champ de Mars</div>
+        <div class="form-title" id="t-form-title"></div>
         <button class="form-close" onclick="closeForm()">&#215;</button>
       </div>
 
-      <!-- NOTE GLOBALE -->
-      <div class="section">
-        <div class="section-label" id="t-stars-label"><span class="req">* </span></div>
+      <!-- 1. NOTE GLOBALE -->
+      <div class="fsec" style="text-align:center;padding-top:24px;padding-bottom:18px">
         <div class="fstars-row">
           <button class="fstar" id="fs1" onclick="setFStar(1)">&#9733;</button>
           <button class="fstar" id="fs2" onclick="setFStar(2)">&#9733;</button>
@@ -221,9 +220,8 @@
         <div class="fstar-hint" id="fstar-hint"></div>
       </div>
 
-      <!-- CATEGORIES -->
-      <div class="section">
-        <div class="section-label" id="t-cat-label"></div>
+      <!-- 2. CATEGORIES -->
+      <div class="fsec">
         <div class="cat-grid">
           <div class="cat-row">
             <div class="cat-name" id="c-cuisine-lbl"></div>
@@ -268,74 +266,80 @@
         </div>
       </div>
 
-      <!-- CHIPS REPAS -->
-      <div class="section" style="padding-top:18px">
-        <div class="section-label" id="t-meal-label"></div>
-        <div class="chips-wrap" id="chips-repas">
-          <div class="chip" onclick="toggleChip('repas',this)" data-fr="D&#233;jeuner" data-en="Lunch" data-zh="午餐"></div>
-          <div class="chip" onclick="toggleChip('repas',this)" data-fr="D&#238;ner" data-en="Dinner" data-zh="晚餐"></div>
-          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Brunch" data-en="Brunch" data-zh="早午餐"></div>
-          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Caf&#233;" data-en="Coffee" data-zh="咖啡"></div>
-        </div>
-      </div>
-
-      <!-- CHIPS BUDGET -->
-      <div class="section" style="padding-top:14px">
-        <div class="section-label" id="t-budget-label"></div>
-        <div class="chips-wrap" id="chips-budget">
-          <div class="chip" onclick="toggleChip('budget',this)" data-fr="&#8722;20&#8364;" data-en="&#8722;&#8364;20" data-zh="20欧以下">&#8722;20&#8364;</div>
-          <div class="chip" onclick="toggleChip('budget',this)" data-fr="20&#8211;35&#8364;" data-en="&#8364;20&#8211;35" data-zh="20&#8211;35欧">20&#8211;35&#8364;</div>
-          <div class="chip" onclick="toggleChip('budget',this)" data-fr="35&#8211;50&#8364;" data-en="&#8364;35&#8211;50" data-zh="35&#8211;50欧">35&#8211;50&#8364;</div>
-          <div class="chip" onclick="toggleChip('budget',this)" data-fr="+50&#8364;" data-en="+&#8364;50" data-zh="50欧以上">+50&#8364;</div>
-        </div>
-      </div>
-
-      <!-- SERVEUR -->
-      <div class="section" style="padding-top:18px;padding-bottom:18px">
-        <div class="section-label" id="t-serveur-label"></div>
-        <input type="text" class="finput" id="serveurNom" id="t-serveur-placeholder" autocomplete="off">
-      </div>
-
-      <!-- CHIPS BRUIT -->
-      <div class="section" style="padding-top:14px">
-        <div class="section-label" id="t-bruit-label"></div>
-        <div class="chips-wrap" id="chips-bruit">
-          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Calme" data-en="Quiet" data-zh="安静"></div>
-          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Normal" data-en="Normal" data-zh="正常"></div>
-          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Bruyant" data-en="Loud" data-zh="嘈杂"></div>
-        </div>
-      </div>
-
-      <!-- CHIPS ATTENTE -->
-      <div class="section" style="padding-top:14px">
-        <div class="section-label" id="t-attente-label"></div>
-        <div class="chips-wrap" id="chips-attente">
-          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Rapide" data-en="Fast" data-zh="快速"></div>
-          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Normal" data-en="Normal" data-zh="正常"></div>
-          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Long" data-en="Long" data-zh="较长"></div>
-          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Tr&#232;s long" data-en="Very long" data-zh="很长"></div>
-        </div>
-      </div>
-
-      <!-- TEXTAREA -->
-      <div class="textarea-wrap">
-        <div class="textarea-lbl" id="t-textarea-label"></div>
+      <!-- 3. COMMENTAIRE -->
+      <div class="fsec">
         <textarea class="review-textarea" id="review-text" maxlength="2000" oninput="onTextInput()"></textarea>
-        <div class="char-count"><span id="char-count">0</span>/2000</div>
+        <div class="char-count"><span id="char-count">0</span> / 2000</div>
       </div>
 
-      <!-- DATE -->
-      <div class="section" style="padding-top:0;padding-bottom:18px">
-        <div class="section-label" id="t-date-label"></div>
-        <input type="month" class="finput" id="dateVisite">
+      <!-- 4. DATE -->
+      <div class="fsec">
+        <div class="flabel" id="t-date-label"></div>
+        <div class="date-row">
+          <select class="fselect" id="selectMois"></select>
+          <select class="fselect" id="selectAnnee"></select>
+        </div>
       </div>
 
-      <!-- CONTACT -->
-      <div class="section" style="padding-top:0;padding-bottom:4px">
-        <div class="section-label"><span id="t-contact-label"></span></div>
+      <!-- 5. SERVEUR -->
+      <div class="fsec">
+        <div class="flabel" id="t-serveur-label"></div>
+        <input type="text" class="finput" id="serveurNom" autocomplete="off">
+      </div>
+
+      <!-- 6. TYPE DE REPAS -->
+      <div class="fsec">
+        <div class="flabel" id="t-meal-label"></div>
+        <div class="chips-wrap" id="chips-repas">
+          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Petit-dejeuner" data-en="Breakfast" data-zh="&#26089;&#39278;"></div>
+          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Brunch" data-en="Brunch" data-zh="&#26089;&#21320;&#39278;"></div>
+          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Dejeuner" data-en="Lunch" data-zh="&#21320;&#39278;"></div>
+          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Diner" data-en="Dinner" data-zh="&#26202;&#39278;"></div>
+          <div class="chip" onclick="toggleChip('repas',this)" data-fr="Autre" data-en="Other" data-zh="&#20854;&#20182;"></div>
+        </div>
+      </div>
+
+      <!-- 7. BUDGET -->
+      <div class="fsec">
+        <div class="flabel" id="t-budget-label"></div>
+        <div class="chips-wrap" id="chips-budget">
+          <div class="chip" onclick="toggleChip('budget',this)">1&#8211;20&euro;</div>
+          <div class="chip" onclick="toggleChip('budget',this)">20&#8211;40&euro;</div>
+          <div class="chip" onclick="toggleChip('budget',this)">40&#8211;60&euro;</div>
+          <div class="chip" onclick="toggleChip('budget',this)">60&#8211;80&euro;</div>
+          <div class="chip" onclick="toggleChip('budget',this)">80&#8211;100&euro;</div>
+          <div class="chip" onclick="toggleChip('budget',this)">+100&euro;</div>
+        </div>
+      </div>
+
+      <!-- 8. BRUIT -->
+      <div class="fsec">
+        <div class="flabel" id="t-bruit-label"></div>
+        <div class="chips-wrap" id="chips-bruit">
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Calme" data-en="Quiet" data-zh="&#23433;&#38745;"></div>
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Mod&#233;r&#233;" data-en="Moderate" data-zh="&#36827;&#20013;"></div>
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="&#201;lev&#233;" data-en="Loud" data-zh="&#22706;&#26434;"></div>
+          <div class="chip" onclick="toggleChip('bruit',this)" data-fr="Pas s&#251;r" data-en="Not sure" data-zh="&#19981;&#30830;&#23450;"></div>
+        </div>
+      </div>
+
+      <!-- 9. ATTENTE -->
+      <div class="fsec">
+        <div class="flabel" id="t-attente-label"></div>
+        <div class="chips-wrap" id="chips-attente">
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Moins de 10 min" data-en="Under 10 min" data-zh="10&#20998;&#38047;&#20869;"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="10&#8211;20 min" data-en="10&#8211;20 min" data-zh="10&#8211;20&#20998;&#38047;"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="20&#8211;30 min" data-en="20&#8211;30 min" data-zh="20&#8211;30&#20998;&#38047;"></div>
+          <div class="chip" onclick="toggleChip('attente',this)" data-fr="Plus de 30 min" data-en="Over 30 min" data-zh="30&#20998;&#38047;&#20197;&#19978;"></div>
+        </div>
+      </div>
+
+      <!-- 10. CONTACT -->
+      <div class="fsec">
+        <div class="flabel"><span id="t-contact-label"></span></div>
         <div class="ctoggle">
           <button class="ctbtn active" id="btn-email" onclick="switchContact('email')">&#128231; Email</button>
-          <button class="ctbtn" id="btn-phone" onclick="switchContact('phone')" id="t-phone-btn"></button>
+          <button class="ctbtn" id="btn-phone" onclick="switchContact('phone')"></button>
         </div>
         <div id="field-email">
           <input type="email" class="finput" id="contactEmail" autocomplete="email" placeholder="votre@email.com">
@@ -345,20 +349,17 @@
         </div>
       </div>
 
-      <!-- RGPD -->
-      <div class="rgpd-wrap">
-        <label class="rgpd-label">
+      <!-- 11. RGPD + SUBMIT -->
+      <div class="fsec" style="border-bottom:none;padding-bottom:40px">
+        <label class="rgpd-label" style="margin-bottom:22px;display:flex">
           <input type="checkbox" id="rgpd" onchange="refreshSubmit()">
-          <span><span id="t-rgpd"></span><span class="req"> *</span></span>
+          <span><span id="t-rgpd"></span><span style="color:#d93025;font-weight:700"> *</span></span>
         </label>
-      </div>
-
-      <!-- SUBMIT -->
-      <div class="submit-wrap">
         <button class="btn-submit" id="btn-submit" onclick="submitForm()" disabled>
           <span id="t-submit"></span>
         </button>
       </div>
+
     </div>
   </div>
 </div>
@@ -392,7 +393,10 @@ var T = {
     dateLabel:'Date de visite',
     contactLabel:'Vos coordonn&#233;es',
     phoneBtn:'&#128241; T&#233;l&#233;phone',
-    rgpd:'J\'accepte que mes donn&#233;es soient utilis&#233;es pour am&#233;liorer notre service. Elles ne seront jamais partag&#233;es &#224; des tiers.',
+    moisLabels:['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+    moisPlaceholder:'Mois',
+    anneePlaceholder:'Année',
+    rgpd:'J\'accepte que mes données soient transmises à l\'établissement Le Champ de Mars afin de traiter mon retour, conformément au RGPD (Règlement UE 2016/679). Ces données ne seront ni conservées au-delà du strict nécessaire, ni cédées à des tiers.',
     submit:'Publier mon avis',
     successTitle:'Merci pour votre retour&nbsp;!',
     successText:'Votre avis nous aide &#224; nous am&#233;liorer pour votre prochaine visite.'
@@ -419,7 +423,10 @@ var T = {
     dateLabel:'Visit date',
     contactLabel:'Your contact',
     phoneBtn:'&#128241; Phone',
-    rgpd:'I agree that my data will be used to improve our service. It will never be shared with third parties.',
+    moisLabels:['January','February','March','April','May','June','July','August','September','October','November','December'],
+    moisPlaceholder:'Month',
+    anneePlaceholder:'Year',
+    rgpd:'I agree that my data will be transmitted to Le Champ de Mars to process my feedback, in accordance with GDPR (EU Regulation 2016/679). Data will not be retained beyond what is strictly necessary, nor shared with third parties.',
     submit:'Publish my review',
     successTitle:'Thank you for your feedback!',
     successText:'Your review truly helps us improve for your next visit.'
@@ -446,7 +453,10 @@ var T = {
     dateLabel:'&#21040;&#35775;&#26085;&#26399;',
     contactLabel:'&#24744;&#30340;&#32852;&#31995;&#26041;&#24335;',
     phoneBtn:'&#128241; &#30005;&#35805;',
-    rgpd:'&#25105;&#21516;&#24847;&#25105;&#30340;&#25968;&#25454;&#23558;&#29992;&#20110;&#25913;&#21892;&#26381;&#21153;&#65292;&#19988;&#19981;&#20250;&#19982;&#31532;&#19977;&#26041;&#20849;&#20139;&#12290;',
+    moisLabels:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+    moisPlaceholder:'月份',
+    anneePlaceholder:'年份',
+    rgpd:'我同意将我的数据传输给Le Champ de Mars以处理我的反馈，符合GDPR（欧盟法规2016/679）。数据不会超出严格必要范围保存，也不会与第三方共享。',
     submit:'&#21457;&#24067;&#25105;&#30340;&#35780;&#20215;',
     successTitle:'&#24863;&#35874;&#24744;&#30340;&#21453;&#39304;&#65281;',
     successText:'&#24744;&#30340;&#35780;&#20215;&#24110;&#21161;&#25105;&#20204;&#19981;&#26029;&#36827;&#27493;&#12290;'
@@ -489,8 +499,6 @@ function render(){
   set('t-question', t.question);
   set('t-subtext', t.subtext);
   set('t-form-title', t.formTitle);
-  document.getElementById('t-stars-label').innerHTML = '<span class="req">* </span>' + t.starsLabel;
-  set('t-cat-label', t.catLabel);
   set('c-cuisine-lbl', t.cats.cuisine);
   set('c-service-lbl', t.cats.service);
   set('c-ambiance-lbl', t.cats.ambiance);
@@ -501,9 +509,9 @@ function render(){
   document.getElementById('serveurNom').placeholder = t.serveurPlaceholder;
   set('t-bruit-label', t.bruitLabel);
   set('t-attente-label', t.attenteLabel);
-  set('t-textarea-label', t.textareaLabel);
   document.getElementById('review-text').placeholder = t.placeholder;
   set('t-date-label', t.dateLabel);
+  buildDateSelects(t);
   set('t-contact-label', t.contactLabel);
   document.getElementById('btn-phone').innerHTML = t.phoneBtn;
   set('t-rgpd', t.rgpd);
@@ -636,11 +644,29 @@ function refreshSubmit(){
   document.getElementById('btn-submit').disabled = !(formNote>0 && document.getElementById('rgpd').checked);
 }
 
-/* ── PRE-FILL DATE ── */
-(function(){
+/* ── DATE SELECTS ── */
+function buildDateSelects(t){
   var now = new Date();
-  document.getElementById('dateVisite').value = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
-})();
+  var mois = document.getElementById('selectMois');
+  var annee = document.getElementById('selectAnnee');
+  if(!mois||!annee) return;
+  mois.innerHTML = '<option value="">' + t.moisPlaceholder + '</option>';
+  t.moisLabels.forEach(function(m, i){
+    var opt = document.createElement('option');
+    opt.value = String(i+1).padStart(2,'0');
+    opt.textContent = m;
+    if(i === now.getMonth()) opt.selected = true;
+    mois.appendChild(opt);
+  });
+  annee.innerHTML = '<option value="">' + t.anneePlaceholder + '</option>';
+  for(var y = now.getFullYear(); y >= now.getFullYear()-2; y--){
+    var opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    if(y === now.getFullYear()) opt.selected = true;
+    annee.appendChild(opt);
+  }
+}
 
 /* ── SUBMIT FORM ── */
 function submitForm(){
@@ -655,7 +681,7 @@ function submitForm(){
     note_ambiance:catNotes.ambiance,
     note_proprete:catNotes.proprete,
     commentaire:document.getElementById('review-text').value.trim(),
-    date_visite:document.getElementById('dateVisite').value,
+    date_visite:document.getElementById('selectMois').value + '/' + document.getElementById('selectAnnee').value,
     type_repas:chipSel.repas,
     budget:chipSel.budget,
     serveur:document.getElementById('serveurNom').value.trim(),
