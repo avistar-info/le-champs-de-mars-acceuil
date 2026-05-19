@@ -621,7 +621,8 @@ function toggleChip(group, el){
   var wrap = document.getElementById('chips-'+group);
   if(wrap) wrap.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('sel'); });
   el.classList.add('sel');
-  chipSel[group] = el.textContent.trim();
+  // Toujours stocker la valeur FR (pour le sheet en français)
+  chipSel[group] = el.getAttribute('data-fr') || el.textContent.trim();
 }
 
 /* ── TEXTAREA ── */
@@ -693,7 +694,7 @@ function submitForm(){
     ts:new Date().toISOString()
   };
   fetch(WEBHOOK_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
-  track('form_submitted',{note:formNote});
+  track('form_submitted',{note:formNote, contact_type:contactMode, contact:contact});
   document.getElementById('form-body').classList.add('hidden');
   document.getElementById('success').classList.add('visible');
   setTimeout(closeForm, 3000);
