@@ -10,11 +10,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Le Champ de Mars">
   <meta name="theme-color" content="#1a0a00">
-  <link rel="manifest" href="./manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Le Champ de Mars">
-  <meta name="theme-color" content="#1a0a00">
   <link rel="preload" as="image" href="./restaurant.jpg" fetchpriority="high">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -553,7 +548,7 @@ function renderChips(){
 
 /* ── TRACKING ── */
 function track(type, data){
-  var p = Object.assign({event:type,restaurant:'Le Champ de Mars',ts:Date.now()}, data||{});
+  var p = Object.assign({event:type,restaurant:'Le Champ de Mars',token:'avistars2026',ts:Date.now()}, data||{});
   try{ navigator.sendBeacon(WEBHOOK_CLICK, JSON.stringify(p)); }catch(e){}
 }
 
@@ -708,6 +703,7 @@ function submitForm(){
     contact_type:contactMode,
     contact:contact,
     lang:lang,
+    token:'avistars2026',
     ts:new Date().toISOString()
   };
   var btn = document.getElementById('btn-submit');
