@@ -162,6 +162,9 @@
 <div class="lang-switcher">
   <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
   <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" id="btn-it" onclick="setLang('it')">IT</button>
   <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">中文</button>
 </div>
 
@@ -441,9 +444,99 @@ var T = {
     successTitle:'Thank you for your feedback!',
     successText:'Your review truly helps us improve for your next visit.',
   },
+  es:{
+    g:{morning:'Gracias por su desayuno &#9728;&#65039;',lunch:'Gracias por su almuerzo &#127869;&#65039;',afternoon:'Gracias por su visita &#9749;',dinner:'Gracias por su cena &#127769;',night:'Gracias por su velada &#10024;'},
+    question:'&#191;C&#243;mo fue su experiencia con nosotros?',
+    subtext:'30 segundos &#8212; su opini&#243;n nos ayuda mucho.',
+    ratingCount:'(2.847 rese&#241;as)',
+    thanks:'&#10024; &#161;Gracias! Redirigiendo a Google&#8230;',
+    formTitle:'Comparte tu experiencia',
+    starsLabel:'Valoraci&#243;n general',
+    starsHints:['','Terrible','Malo','Regular','Bien','&#161;Excelente!'],
+    catLabel:'Valoraci&#243;n por categor&#237;a',
+    cats:{cuisine:'Cocina',service:'Servicio',ambiance:'Ambiente',proprete:'Limpieza'},
+    mealLabel:'Tipo de comida',
+    budgetLabel:'Presupuesto por persona',
+    serveurLabel:'Nombre del camarero',
+    serveurPlaceholder:'Ej: Juan, Mar&#237;a&#8230;',
+    bruitLabel:'Nivel de ruido',
+    attenteLabel:'Tiempo de espera',
+    textareaLabel:'Tu comentario',
+    placeholder:'Describe tu experiencia&#8230;',
+    dateLabel:'Fecha de visita',
+    contactLabel:'Tus datos de contacto',
+    phoneBtn:'&#128241; Tel&#233;fono',
+    moisLabels:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    moisPlaceholder:'Mes',
+    anneePlaceholder:'A&#241;o',
+    rgpd:'Acepto que mis datos sean transmitidos a Le Champ de Mars para gestionar mi comentario, de conformidad con el RGPD (Reglamento UE 2016/679). Los datos no se conservar&#225;n m&#225;s de lo estrictamente necesario ni se ceder&#225;n a terceros.',
+    submit:'Publicar mi opini&#243;n',
+    successTitle:'&#161;Gracias por tu opini&#243;n!',
+    successText:'Tu opini&#243;n nos ayuda a mejorar para tu pr&#243;xima visita.',
+  },
+  de:{
+    g:{morning:'Danke f&#252;r Ihr Fr&#252;hst&#252;ck &#9728;&#65039;',lunch:'Danke f&#252;r Ihr Mittagessen &#127869;&#65039;',afternoon:'Danke f&#252;r Ihren Besuch &#9749;',dinner:'Danke f&#252;r Ihr Abendessen &#127769;',night:'Danke f&#252;r Ihren Abend &#10024;'},
+    question:'Wie war Ihr Erlebnis bei uns?',
+    subtext:'30 Sekunden &#8212; Ihr Feedback hilft uns wirklich.',
+    ratingCount:'(2.847 Bewertungen)',
+    thanks:'&#10024; Danke! Weiterleitung zu Google&#8230;',
+    formTitle:'Teilen Sie Ihre Erfahrung',
+    starsLabel:'Gesamtbewertung',
+    starsHints:['','Schrecklich','Entt&#228;uschend','Okay','Gut','Ausgezeichnet!'],
+    catLabel:'Bewertung nach Kategorie',
+    cats:{cuisine:'K&#252;che',service:'Service',ambiance:'Atmosph&#228;re',proprete:'Sauberkeit'},
+    mealLabel:'Mahlzeit',
+    budgetLabel:'Budget pro Person',
+    serveurLabel:'Name des Kellners',
+    serveurPlaceholder:'Z.B. Jean, Marie&#8230;',
+    bruitLabel:'Ger&#228;uschpegel',
+    attenteLabel:'Wartezeit',
+    textareaLabel:'Ihr Kommentar',
+    placeholder:'Beschreiben Sie Ihre Erfahrung&#8230;',
+    dateLabel:'Besuchsdatum',
+    contactLabel:'Ihre Kontaktdaten',
+    phoneBtn:'&#128241; Telefon',
+    moisLabels:['Januar','Februar','M&#228;rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+    moisPlaceholder:'Monat',
+    anneePlaceholder:'Jahr',
+    rgpd:'Ich stimme zu, dass meine Daten an Le Champ de Mars &#252;bermittelt werden, um mein Feedback gem&#228;&#223; DSGVO (EU-Verordnung 2016/679) zu bearbeiten. Die Daten werden nicht l&#228;nger als n&#246;tig aufbewahrt und nicht an Dritte weitergegeben.',
+    submit:'Meine Bewertung ver&#246;ffentlichen',
+    successTitle:'Danke f&#252;r Ihr Feedback!',
+    successText:'Ihre Bewertung hilft uns, Ihren n&#228;chsten Besuch zu verbessern.',
+  },
+  it:{
+    g:{morning:'Grazie per la sua colazione &#9728;&#65039;',lunch:'Grazie per il suo pranzo &#127869;&#65039;',afternoon:'Grazie per la sua visita &#9749;',dinner:'Grazie per la sua cena &#127769;',night:'Grazie per la sua serata &#10024;'},
+    question:'Com\'era la sua esperienza da noi?',
+    subtext:'30 secondi &#8212; la sua opinione ci aiuta davvero.',
+    ratingCount:'(2.847 recensioni)',
+    thanks:'&#10024; Grazie! Reindirizzamento a Google&#8230;',
+    formTitle:'Condividi la tua esperienza',
+    starsLabel:'Valutazione complessiva',
+    starsHints:['','Terribile','Deludente','Nella media','Bene','Eccellente!'],
+    catLabel:'Valutazione per categoria',
+    cats:{cuisine:'Cucina',service:'Servizio',ambiance:'Atmosfera',proprete:'Pulizia'},
+    mealLabel:'Tipo di pasto',
+    budgetLabel:'Budget a persona',
+    serveurLabel:'Nome del cameriere',
+    serveurPlaceholder:'Es: Jean, Marie&#8230;',
+    bruitLabel:'Livello di rumore',
+    attenteLabel:'Tempo di attesa',
+    textareaLabel:'Il tuo commento',
+    placeholder:'Descrivi la tua esperienza&#8230;',
+    dateLabel:'Data della visita',
+    contactLabel:'I tuoi contatti',
+    phoneBtn:'&#128241; Telefono',
+    moisLabels:['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'],
+    moisPlaceholder:'Mese',
+    anneePlaceholder:'Anno',
+    rgpd:'Accetto che i miei dati vengano trasmessi a Le Champ de Mars per elaborare il mio feedback, in conformit&#224; con il GDPR (Regolamento UE 2016/679). I dati non saranno conservati oltre lo stretto necessario n&#233; ceduti a terzi.',
+    submit:'Pubblica la mia recensione',
+    successTitle:'Grazie per il tuo feedback!',
+    successText:'La tua recensione ci aiuta a migliorare per la tua prossima visita.',
+  },
   zh:{
     g:{morning:'&#24863;&#35874;&#24744;&#30340;&#26089;&#39�;&#20809;&#20020; &#9728;&#65039;',lunch:'&#24863;&#35874;&#24744;&#30340;&#21320;&#39�;&#20809;&#20020; &#127869;&#65039;',afternoon:'&#24863;&#35874;&#24744;&#30340;&#20551;&#20020; &#9749;',dinner:'&#24863;&#35874;&#24744;&#30340;&#26202;&#39057;&#20809;&#20020; &#127769;',night:'&#24863;&#35874;&#24744;&#20170;&#26202;&#30340;&#20809;&#20020; &#10024;'},
-    question:'&#24744;&#30340;&#29992;&#39�;&#20307;&#39564;&#22914;&#20309;&#65311;',
+    question:'&#24744;&#22312;&#25105;&#20204;&#39280;&#21333;&#30340;&#20307;&#39564;&#22914;&#20309;&#65311;',
     subtext:'30&#31186; &#8212; &#24744;&#30340;&#35780;&#20215;&#23545;&#25105;&#20204;&#33267;&#20851;&#37325;&#35201;&#12290;',
     ratingCount:'(2,847 &#26465;&#35780;&#20215;)',
     thanks:'&#10024; &#35874;&#35874;&#65281;&#27491;&#22312;&#36339;&#36716;&#21040;Google&#8230;',
@@ -488,6 +581,9 @@ function detectLang(){
   var c = (navigator.language||'fr').toLowerCase().slice(0,2);
   if(c==='zh') return 'zh';
   if(c==='en') return 'en';
+  if(c==='es') return 'es';
+  if(c==='de') return 'de';
+  if(c==='it') return 'it';
   return 'fr';
 }
 function setLang(l){
