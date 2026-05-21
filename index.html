@@ -811,7 +811,7 @@ function submitForm(){
   fetch(WEBHOOK_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .catch(function(){})
     .finally(function(){
-      track('form_submitted',{note:formNote, contact_type:contactMode, contact:contact});
+      track('form_submitted',{note:formNote, contact_type:contact ? contactMode : '', contact:contact, commentaire:document.getElementById('review-text').value.trim()});
       document.getElementById('form-body').classList.add('hidden');
       document.getElementById('success').classList.add('visible');
       setTimeout(closeForm, 4000);
