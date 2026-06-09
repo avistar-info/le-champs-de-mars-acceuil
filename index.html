@@ -295,7 +295,20 @@
       <!-- 5. SERVEUR -->
       <div class="fsec" style="display:none">
         <div class="flabel" id="t-serveur-label"></div>
-        <input type="text" class="finput" id="serveurNom" autocomplete="off">
+        <select class="fselect" id="serveurNom">
+          <option value="">Je ne sais pas</option>
+          <option>Charles</option>
+          <option>Jo</option>
+          <option>Christian</option>
+          <option>Tom</option>
+          <option>Piotre</option>
+          <option>Enzo</option>
+          <option>Benoit</option>
+          <option>Vincent</option>
+          <option>Tony</option>
+          <option>Mathieu</option>
+          <option>Karl</option>
+        </select>
       </div>
 
       <!-- 6. TYPE DE REPAS -->
@@ -612,7 +625,7 @@ function render(){
   set('t-meal-label', t.mealLabel);
   set('t-budget-label', t.budgetLabel);
   set('t-serveur-label', t.serveurLabel);
-  document.getElementById('serveurNom').placeholder = t.serveurPlaceholder;
+  // serveurNom est maintenant un select — pas de placeholder
   set('t-bruit-label', t.bruitLabel);
   set('t-attente-label', t.attenteLabel);
   document.getElementById('review-text').placeholder = t.placeholder;
