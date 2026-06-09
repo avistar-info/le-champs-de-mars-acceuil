@@ -295,20 +295,20 @@
       <!-- 5. SERVEUR -->
       <div class="fsec" style="display:none">
         <div class="flabel" id="t-serveur-label"></div>
-        <select class="fselect" id="serveurNom">
-          <option value="">Je ne sais pas</option>
-          <option>Charles</option>
-          <option>Jo</option>
-          <option>Christian</option>
-          <option>Tom</option>
-          <option>Piotre</option>
-          <option>Enzo</option>
-          <option>Benoit</option>
-          <option>Vincent</option>
-          <option>Tony</option>
-          <option>Mathieu</option>
-          <option>Karl</option>
-        </select>
+        <div class="chips-wrap" id="chips-serveur">
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Charles" data-en="Charles" data-es="Charles" data-de="Charles" data-it="Charles" data-zh="Charles">Charles</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Jo" data-en="Jo" data-es="Jo" data-de="Jo" data-it="Jo" data-zh="Jo">Jo</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Christian" data-en="Christian" data-es="Christian" data-de="Christian" data-it="Christian" data-zh="Christian">Christian</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Tom" data-en="Tom" data-es="Tom" data-de="Tom" data-it="Tom" data-zh="Tom">Tom</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Piotre" data-en="Piotre" data-es="Piotre" data-de="Piotre" data-it="Piotre" data-zh="Piotre">Piotre</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Enzo" data-en="Enzo" data-es="Enzo" data-de="Enzo" data-it="Enzo" data-zh="Enzo">Enzo</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Benoit" data-en="Benoit" data-es="Benoit" data-de="Benoit" data-it="Benoit" data-zh="Benoit">Benoit</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Vincent" data-en="Vincent" data-es="Vincent" data-de="Vincent" data-it="Vincent" data-zh="Vincent">Vincent</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Tony" data-en="Tony" data-es="Tony" data-de="Tony" data-it="Tony" data-zh="Tony">Tony</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Mathieu" data-en="Mathieu" data-es="Mathieu" data-de="Mathieu" data-it="Mathieu" data-zh="Mathieu">Mathieu</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Karl" data-en="Karl" data-es="Karl" data-de="Karl" data-it="Karl" data-zh="Karl">Karl</div>
+          <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Je ne sais pas" data-en="Don&#39;t know" data-es="No s&#233;" data-de="Wei&#223; nicht" data-it="Non so" data-zh="&#19981;&#30693;&#36947;">Je ne sais pas</div>
+        </div>
       </div>
 
       <!-- 6. TYPE DE REPAS -->
@@ -584,7 +584,7 @@ var lang = 'fr';
 var landingNote = 0;
 var formNote = 0;
 var catNotes = {cuisine:0,service:0,ambiance:0,proprete:0};
-var chipSel = {repas:null,budget:null,bruit:null,attente:null};
+var chipSel = {repas:null,budget:null,bruit:null,attente:null,serveur:null};
 var contactMode = 'email';
 
 /* ── LANG DETECT ── */
@@ -809,7 +809,7 @@ function submitForm(){
     date_visite:document.getElementById('selectMois').value + '/' + document.getElementById('selectAnnee').value,
     type_repas:chipSel.repas,
     budget:chipSel.budget,
-    serveur:document.getElementById('serveurNom').value.trim(),
+    serveur:chipSel.serveur||'',
     bruit:chipSel.bruit,
     attente:chipSel.attente,
     contact_type:contactMode,
