@@ -297,7 +297,7 @@
         <div class="flabel" id="t-serveur-label"></div>
         <div class="date-row">
           <select class="fselect" id="serveurSelect" onchange="chipSel.serveur=this.value||null">
-            <option value="">Je ne sais pas</option>
+            <option value="" id="serveur-default">Je ne sais pas</option>
             <option>Charles</option>
             <option>Jo</option>
             <option>Christian</option>
@@ -427,6 +427,7 @@ var T = {
     mealLabel:'Type de repas',
     budgetLabel:'Budget par personne',
     serveurLabel:'Nom du serveur',
+    serveurDefault:'Je ne sais pas',
     serveurPlaceholder:'Ex : Jean, Marie…',
     bruitLabel:'Niveau sonore',
     attenteLabel:'Temps d\'attente',
@@ -457,6 +458,7 @@ var T = {
     mealLabel:'Meal type',
     budgetLabel:'Budget per person',
     serveurLabel:'Server name',
+    serveurDefault:'I don\'t know',
     serveurPlaceholder:'E.g. John, Marie…',
     bruitLabel:'Noise level',
     attenteLabel:'Wait time',
@@ -487,6 +489,7 @@ var T = {
     mealLabel:'Tipo de comida',
     budgetLabel:'Presupuesto por persona',
     serveurLabel:'Nombre del camarero',
+    serveurDefault:'No lo s&#233;',
     serveurPlaceholder:'Ej: Juan, Mar&#237;a&#8230;',
     bruitLabel:'Nivel de ruido',
     attenteLabel:'Tiempo de espera',
@@ -517,6 +520,7 @@ var T = {
     mealLabel:'Mahlzeit',
     budgetLabel:'Budget pro Person',
     serveurLabel:'Name des Kellners',
+    serveurDefault:'Wei&#223; nicht',
     serveurPlaceholder:'Z.B. Jean, Marie&#8230;',
     bruitLabel:'Ger&#228;uschpegel',
     attenteLabel:'Wartezeit',
@@ -547,6 +551,7 @@ var T = {
     mealLabel:'Tipo di pasto',
     budgetLabel:'Budget a persona',
     serveurLabel:'Nome del cameriere',
+    serveurDefault:'Non lo so',
     serveurPlaceholder:'Es: Jean, Marie&#8230;',
     bruitLabel:'Livello di rumore',
     attenteLabel:'Tempo di attesa',
@@ -577,6 +582,7 @@ var T = {
     mealLabel:'&#39031;&#39154;&#31867;&#22411;',
     budgetLabel:'&#20154;&#22343;&#28040;&#36153;',
     serveurLabel:'服务员姓名',
+    serveurDefault:'&#19981;&#30693;&#36947;',
     serveurPlaceholder:'例如：让、玛丽…',
     bruitLabel:'&#22768;&#39030;&#27700;&#24179;',
     attenteLabel:'&#31561;&#24453;&#26102;&#38388;',
@@ -641,6 +647,7 @@ function render(){
   set('t-meal-label', t.mealLabel);
   set('t-budget-label', t.budgetLabel);
   set('t-serveur-label', t.serveurLabel);
+  document.getElementById('serveur-default').textContent = t.serveurDefault;
   // serveurNom est maintenant un select — pas de placeholder
   set('t-bruit-label', t.bruitLabel);
   set('t-attente-label', t.attenteLabel);
