@@ -295,20 +295,22 @@
       <!-- 5. SERVEUR -->
       <div class="fsec">
         <div class="flabel" id="t-serveur-label"></div>
-        <select class="fselect" id="serveurSelect" onchange="chipSel.serveur=this.value||null">
-          <option value="">Je ne sais pas</option>
-          <option>Charles</option>
-          <option>Jo</option>
-          <option>Christian</option>
-          <option>Tom</option>
-          <option>Piotre</option>
-          <option>Enzo</option>
-          <option>Benoit</option>
-          <option>Vincent</option>
-          <option>Tony</option>
-          <option>Mathieu</option>
-          <option>Karl</option>
-        </select>
+        <div class="date-row">
+          <select class="fselect" id="serveurSelect" onchange="chipSel.serveur=this.value||null">
+            <option value="">Je ne sais pas</option>
+            <option>Charles</option>
+            <option>Jo</option>
+            <option>Christian</option>
+            <option>Tom</option>
+            <option>Piotre</option>
+            <option>Enzo</option>
+            <option>Benoit</option>
+            <option>Vincent</option>
+            <option>Tony</option>
+            <option>Mathieu</option>
+            <option>Karl</option>
+          </select>
+        </div>
         <div class="chips-wrap" id="chips-serveur" style="display:none">
           <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Charles" data-en="Charles" data-es="Charles" data-de="Charles" data-it="Charles" data-zh="Charles">Charles</div>
           <div class="chip" onclick="toggleChip('serveur',this)" data-fr="Jo" data-en="Jo" data-es="Jo" data-de="Jo" data-it="Jo" data-zh="Jo">Jo</div>
